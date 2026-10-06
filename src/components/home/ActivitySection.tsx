@@ -2,6 +2,7 @@ import { HOME } from "@/data/content";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { PageContainer } from "@/components/ui/PageContainer";
 import { Section } from "@/components/ui/Section";
+import clubPhoto from "@/assets/images/club-students.jpg";
 
 export function ActivitySection() {
   return (
@@ -12,7 +13,7 @@ export function ActivitySection() {
             <figure className="overflow-hidden rounded-ui border border-lavender-200">
               <div className="relative">
                 <img
-                  src="/assets/images/club-students.jpg"
+                  src={clubPhoto}
                   alt="Məktəb şagirdləri birgə çalışarkən"
                   width={1400}
                   height={919}

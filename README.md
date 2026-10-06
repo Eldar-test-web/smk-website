@@ -38,8 +38,8 @@ src/
   lib/            cn, motion variants, navigation, site constants, form validation
   pages/          Home, Team, Registration, NotFound
   styles/         Tailwind theme tokens and base styles
+  assets/images/  bundled photography (imported so Vite rewrites URLs per deploy base)
 public/
-  assets/images/  photography
   assets/team/    member portraits (see README there)
 ```
 
@@ -84,6 +84,6 @@ focus transfer and `Escape` handling on the mobile menu, and body scroll locking
 
 ## Assets
 
-`public/assets/images/club-students.jpg` is a Pexels stock photograph used under the Pexels
+`src/assets/images/club-students.jpg` is a Pexels stock photograph used under the Pexels
 license (free for commercial use, attribution not required). Replace it with a photograph of
 your own club if you prefer.
