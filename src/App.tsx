@@ -39,7 +39,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
         <a
           href="#main-content"
           className={`sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 ${LAYERS.skipLink} focus:rounded-ui focus:bg-white focus:px-4 focus:py-3 focus:text-[0.875rem] focus:font-medium focus:text-purple-800`}
