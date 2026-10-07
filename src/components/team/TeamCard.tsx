@@ -22,8 +22,8 @@ export function TeamCard({ member, className }: TeamCardProps) {
   const showPhoto = Boolean(member.photo) && !photoFailed;
 
   return (
-    <motion.article variants={fadeUp} className={cn("group", className)}>
-      <div className="relative aspect-[4/5] overflow-hidden rounded-ui border border-lavender-200 bg-lavender-100 transition-[border-color,box-shadow,transform] duration-300 ease-out group-hover:-translate-y-1 group-hover:border-lavender-400 group-hover:shadow-[0_24px_48px_-28px_rgba(42,7,67,0.5)]">
+    <motion.article variants={fadeUp} className={cn(className)}>
+      <div className="relative aspect-[4/5] overflow-hidden rounded-ui border border-lavender-200 bg-lavender-100">
         {showPhoto ? (
           <img
             src={member.photo as string}
@@ -31,7 +31,7 @@ export function TeamCard({ member, className }: TeamCardProps) {
             loading="lazy"
             decoding="async"
             onError={() => setPhotoFailed(true)}
-            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+            className="h-full w-full object-cover"
           />
         ) : (
           <span

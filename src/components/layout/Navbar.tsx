@@ -7,8 +7,7 @@ import { EASE } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 import { LAYERS } from "@/lib/site";
 import { PageContainer } from "@/components/ui/PageContainer";
-import { Logo } from "@/components/ui/Logo";
-import { MobileMenu } from "./MobileMenu";
+import { Logo } from "@/components/ui/Logo";import { MobileMenu } from "./MobileMenu";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,10 +40,10 @@ export function Navbar() {
       <PageContainer className="flex h-16 items-center justify-between lg:h-[72px]">
         <Link
           to="/"
-          className="flex items-center gap-3 text-white transition-opacity duration-200 hover:opacity-80"
+          className="flex items-center text-white transition-opacity duration-200 hover:opacity-80"
           aria-label="SMK, Ana səhifə"
         >
-          <Logo size="sm" />
+          <Logo className="text-[1.4rem]" />
         </Link>
 
         <nav aria-label="Əsas naviqasiya" className="hidden lg:block">

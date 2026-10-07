@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { PageContainer } from "@/components/ui/PageContainer";
+import { AuroraBackdrop } from "@/components/ui/AuroraBackdrop";
 import { EASE } from "@/lib/motion";
 
 type PageHeaderProps = {
@@ -10,9 +11,10 @@ type PageHeaderProps = {
 export function PageHeader({ title, description }: PageHeaderProps) {
   return (
     <section className="relative overflow-hidden bg-purple-950 text-white">
+      <AuroraBackdrop />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(115%_85%_at_6%_0%,var(--color-purple-800)_0%,rgba(21,3,36,0)_62%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(115%_90%_at_6%_0%,transparent_20%,rgb(23_4_38/80%)_100%)]"
       />
       <PageContainer className="relative pb-16 pt-24 sm:pb-20 sm:pt-28 lg:pb-24">
         <motion.div

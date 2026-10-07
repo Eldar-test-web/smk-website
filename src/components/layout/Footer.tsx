@@ -2,17 +2,23 @@ import { Link } from "react-router-dom";
 import { NAV_ITEMS } from "@/lib/navigation";
 import { SITE } from "@/lib/site";
 import { PageContainer } from "@/components/ui/PageContainer";
-import { Logo } from "@/components/ui/Logo";
+import { SmkArt } from "@/components/ui/Logo";
+import { AuroraBackdrop } from "@/components/ui/AuroraBackdrop";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-purple-950 text-white">
-      <PageContainer className="pb-10 pt-14 lg:pt-16">
+    <footer className="relative overflow-hidden bg-purple-950 text-white">
+      <AuroraBackdrop />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_50%_120%,rgb(23_4_38/90%)_10%,transparent_70%)]"
+      />
+      <PageContainer className="relative pb-10 pt-14 lg:pt-16">
         <div className="grid gap-12 border-b border-white/10 pb-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-6">
-            <Logo size="md" showTagline />
+            <SmkArt variant="full" className="h-24 w-auto text-white sm:h-28" />
             <p className="mt-7 max-w-sm text-[0.9375rem] leading-relaxed text-white/55">{SITE.summary}</p>
           </div>
 
@@ -32,7 +38,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2 lg:col-start-11">
             <h2 className="text-label font-medium uppercase text-white/50">Ünvan</h2>
             <p className="mt-5 text-[0.9375rem] leading-relaxed text-white/70">
               {SITE.city}, {SITE.country}

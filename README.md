@@ -38,9 +38,10 @@ src/
   lib/            cn, motion variants, navigation, site constants, form validation
   pages/          Home, Team, Registration, NotFound
   styles/         Tailwind theme tokens and base styles
-  assets/images/  bundled photography (imported so Vite rewrites URLs per deploy base)
-public/
-  assets/team/    member portraits (see README there)
+  assets/
+    brand/        official SMK logo vector artwork
+    team/         member portraits, resolved by glob (see README there)
+    images/       bundled photography (imported so Vite rewrites URLs per deploy base)
 ```
 
 ## Before going live
@@ -53,17 +54,21 @@ public/
 
    Use the international format without `+` or spaces, for example `994501234567`.
 
-2. **Member portraits.** The four leadership cards ship with neutral initials placeholders
-   because no portraits were supplied. Add each photo to `public/assets/team/` and set its
-   `photo` path in `src/data/team.ts`. Portrait crop, 4:5 ratio, at least 800 x 1000 px.
-   Do not use unrelated stock faces for named members.
+2. **Member portraits.** Drop the four leadership photos into `src/assets/team/` using the file
+   names listed in the README in that folder. They are resolved at build time by
+   `import.meta.glob`, so no code change is required. Any member without a file falls back to a
+   neutral initials panel.
 
 ## Design system
 
 Tokens live in `src/styles/index.css` under `@theme`.
 
-- **Palette.** White and violet only. `paper`, `paper-2`, `lavender-50..400`, `purple-500..950`
+- **Palette.** White and violet only, plus three dark magenta-violet tones used by the drifting
+  `aurora` clouds on dark sections. `paper`, `paper-2`, `lavender-50..400`, `purple-500..950`
   plus `body` for secondary text. No other hue is used anywhere.
+- **Logo.** The official vector artwork in `src/assets/brand/smk-artwork.ts`, rendered through
+  `SmkArt` with `fill="currentColor"` so it recolours per surface. Variants: `mark`, `wordmark`,
+  `stacked`, `full`, each a different viewBox crop of the same artwork.
 - **Type.** Geist Variable, self hosted via `@fontsource-variable/geist` (no external font
   request). Scale tokens: `text-display`, `text-page`, `text-section`, `text-card`, `text-lead`,
   `text-label`.
@@ -73,7 +78,9 @@ Tokens live in `src/styles/index.css` under `@theme`.
 - **Motion.** Variants in `src/lib/motion.ts`. The app is wrapped in
   `MotionConfig reducedMotion="user"`, so transform motion collapses to a fade for users who
   request reduced motion. Scroll listeners use Framer Motion `useScroll`, never raw
-  `window.addEventListener("scroll")`.
+  `window.addEventListener("scroll")`. The ambient `aurora` clouds are CSS keyframes with four
+  co-prime durations so they never visibly loop in sync, and they are switched off entirely
+  under `prefers-reduced-motion: reduce`.
 
 ## Accessibility
 

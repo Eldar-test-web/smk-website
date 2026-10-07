@@ -4,15 +4,17 @@ import { HOME } from "@/data/content";
 import { SITE } from "@/lib/site";
 import { EASE, fade, fadeUp, staggerParent } from "@/lib/motion";
 import { Button } from "@/components/ui/Button";
-import { Logo, LogoMark } from "@/components/ui/Logo";
+import { SmkArt } from "@/components/ui/Logo";
+import { AuroraBackdrop } from "@/components/ui/AuroraBackdrop";
 import { PageContainer } from "@/components/ui/PageContainer";
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-purple-950 text-white">
+      <AuroraBackdrop />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(115%_80%_at_6%_0%,var(--color-purple-800)_0%,rgba(21,3,36,0)_60%),radial-gradient(85%_65%_at_100%_100%,var(--color-purple-700)_0%,rgba(21,3,36,0)_62%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_85%_at_50%_110%,rgba(23,4,38,0)_35%,rgb(23_4_38/85%)_100%)]"
       />
 
       <PageContainer className="relative flex min-h-[100svh] flex-1 flex-col pt-20 sm:pt-24 lg:pt-28">
@@ -24,7 +26,7 @@ export function Hero() {
             animate="visible"
           >
             <motion.div variants={fadeUp}>
-              <Logo size="lg" />
+              <SmkArt variant="stacked" className="h-32 w-auto text-white sm:h-36 lg:h-40" />
             </motion.div>
 
             <motion.h1 variants={fadeUp} className="mt-8 max-w-[20ch] text-display font-semibold sm:mt-12">
@@ -54,7 +56,7 @@ export function Hero() {
             animate="visible"
             transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
           >
-            <LogoMark className="w-[min(28vw,400px)] text-white" />
+            <SmkArt variant="mark" className="w-[min(28vw,400px)] text-white" />
           </motion.div>
         </div>
 
