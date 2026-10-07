@@ -14,7 +14,7 @@ export function Hero() {
       <AuroraBackdrop />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_85%_at_50%_110%,rgba(23,4,38,0)_35%,rgb(23_4_38/85%)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(125%_90%_at_50%_115%,rgb(23_4_38/70%)_0%,rgb(23_4_38/25%)_45%,transparent_75%)]"
       />
 
       <PageContainer className="relative flex min-h-[100svh] flex-1 flex-col pt-20 sm:pt-24 lg:pt-28">
@@ -33,7 +33,7 @@ export function Hero() {
               {SITE.fullName}
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="mt-6 max-w-[52ch] text-lead text-white/70 sm:mt-7">
+            <motion.p variants={fadeUp} className="mt-6 max-w-[52ch] text-lead text-white/85 sm:mt-7">
               {HOME.heroText}
             </motion.p>
 

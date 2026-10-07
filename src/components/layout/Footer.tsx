@@ -13,7 +13,7 @@ export function Footer() {
       <AuroraBackdrop />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_50%_120%,rgb(23_4_38/90%)_10%,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(130%_130%_at_50%_125%,rgb(23_4_38/75%)_0%,rgb(23_4_38/30%)_50%,transparent_80%)]"
       />
       <PageContainer className="relative pb-10 pt-14 lg:pt-16">
         <div className="grid gap-12 border-b border-white/10 pb-12 lg:grid-cols-12 lg:gap-8">

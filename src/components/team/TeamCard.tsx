@@ -31,7 +31,7 @@ export function TeamCard({ member, className }: TeamCardProps) {
             loading="lazy"
             decoding="async"
             onError={() => setPhotoFailed(true)}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
           />
         ) : (
           <span
